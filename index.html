@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffb8c9">
+  <meta name="description" content="FRUTIMIA: licuados, granitas, helados, granizados de frutas y minutas.">
+  <title>FRUTIMIA | Frescura en cada sabor</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <button class="icon-btn mobile-menu" id="backBtn" aria-label="Atrás">← <span>Atrás</span></button>
+    <a class="brand" href="#" id="brandHome" aria-label="FRUTIMIA inicio">
+      <img src="images/Logofruti.png" alt="Logo FRUTIMIA" class="brand-logo" data-fallback="logo">
+      <span><strong>FRUTIMIA</strong><small>Frescura en cada sabor 🍓</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <button data-nav="home">Inicio</button>
+      <button data-nav="categories">Categorías</button>
+      <button data-nav="contact">Contacto</button>
+    </nav>
+    <button class="icon-btn home-btn" id="homeBtn" aria-label="Ir al inicio">⌂ <span>Inicio</span></button>
+  </header>
+
+  <div class="online-toolbar" id="onlineToolbar" aria-label="Cuenta y pedidos">
+    <button class="secondary-btn" id="accountBtn">👤 Iniciar sesión</button>
+    <button class="secondary-btn" id="pointsBtn">⭐ Mis puntos</button>
+    <button class="primary-btn" id="cartBtn">🛒 Carrito <span id="cartCount">0</span></button>
+    <button class="secondary-btn hidden" id="adminBtn">⚙️ Administración</button>
+  </div>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-photo" role="img" aria-label="Fotografía del local FRUTIMIA"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <span class="eyebrow">HECHO PARA DISFRUTAR</span>
+        <h1>Un mundo de sabor<br><em>frutal y refrescante</em></h1>
+        <p>Licuados, granitas, helados, granizados y minutas preparados para alegrarte el día.</p>
+        <button class="primary-btn" data-nav="categories">Descubrir el menú <span>↗</span></button>
+      </div>
+      <div class="hero-sticker">Fresco<br><b>♡</b><br>Delicioso</div>
+    </section>
+
+    <section class="favorites-preview" id="favoritesTicker" aria-label="Productos favoritos">
+      <div class="favorites-preview-heading"><span>🍓 LOS FAVORITOS DE FRUTIMIA</span><small>Toca la foto de un producto para pedirlo</small></div>
+      <div class="favorite-teasers" id="favoriteTeasers"></div>
+    </section>
+
+    <section class="section categories-section" id="categoriesSection">
+      <div class="section-heading">
+        <div><span class="eyebrow">¿QUÉ SE TE ANTOJA?</span><h2>Nuestras categorías</h2></div>
+        <p>Elige tu favorito y encuentra tu próximo antojo.</p>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section catalog-section hidden" id="catalogSection">
+      <div class="section-heading catalog-heading">
+        <div><span class="eyebrow" id="catalogEyebrow">ELIGE TU FAVORITO</span><h2 id="catalogTitle">Productos</h2></div>
+        <button class="text-btn" id="catalogBack">← Todas las categorías</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="section favorites-section hidden" id="favoritesSection">
+      <div class="section-heading">
+        <div><span class="eyebrow">LOS MÁS ANTOJABLES</span><h2>Preferidos de FRUTIMIA</h2></div>
+        <p>Tres ideas para empezar. Se pueden cambiar desde el catálogo del código.</p>
+      </div>
+      <div class="product-grid favorites-grid" id="favoritesGrid"></div>
+    </section>
+
+    <section class="contact-section" id="contactSection">
+      <div class="contact-copy"><span class="eyebrow">NOS ENCANTARÁ ATENDERTE</span><h2>Tu próximo antojo<br><em>está aquí.</em></h2><p>Haz tu pedido online y pasa a recogerlo en la heladería. No contamos con servicio de entrega a domicilio.</p>
+        <div class="contact-actions"><a class="primary-btn" id="contactWhatsApp" href="#" target="_blank" rel="noopener">Escribir por WhatsApp ↗</a><a class="secondary-btn" id="contactTikTok" href="#" target="_blank" rel="noopener">Ver TikTok ♪</a></div>
+      </div>
+      <div class="contact-details"><div class="detail-icon">🍓</div><h3>FRUTIMIA</h3><p>Frescura en cada sabor</p><div class="detail-row"><span>📍</span><span id="addressText">Monjara, playa de Cedeño, calle principal, al lado de Pulpería Dulce.</span></div><div class="detail-row"><span>🕒</span><span id="hoursText">Horario por confirmar</span></div><div class="contact-location-action"><a class="secondary-btn" id="contactMaps" href="https://www.google.com/maps/search/?api=1&query=Pulperia+Dulce+Monjara+Cedeno+Honduras" target="_blank" rel="noopener noreferrer">📍 Cómo llegar con Google Maps ↗</a></div><small>Consulta información y disponibilidad por WhatsApp.</small></div>
+    </section>
+  </main>
+
+  <footer><a href="#" id="footerHome">FRUTIMIA 🍓</a><span>Un mundo de sabor frutal y refrescante.</span><span>© <span id="year"></span> FRUTIMIA</span></footer>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+      <div id="modalBody"></div>
+    </section>
+  </div>
+
+  <button class="chat-launcher" id="chatLauncher" aria-label="Abrir asistente">💬 <span>¿Te ayudo?</span></button>
+  <aside class="chat-panel hidden" id="chatPanel" aria-label="Asistente de FRUTIMIA">
+    <div class="chat-header"><img src="images/chatbot.png" alt="" data-fallback="chat"><div><strong>Asistente FRUTIMIA</strong><small>Preguntas frecuentes</small></div><button id="chatClose" aria-label="Cerrar chat">×</button></div>
+    <div class="chat-messages" id="chatMessages"><div class="bot-message">¡Hola! 🍓 Puedo orientarte sobre categorías, personalización y pedidos. La información y disponibilidad se confirman directamente con FRUTIMIA.</div></div>
+    <div class="chat-quick"><button data-chat="¿Qué categorías tienen?">Categorías</button><button data-chat="¿Cómo puedo consultar un producto?">Información</button><button data-chat="¿Cómo hago un pedido?">Pedidos</button></div>
+    <form id="chatForm" class="chat-form"><input id="chatInput" type="text" placeholder="Escribe tu consulta..." autocomplete="off" aria-label="Mensaje"><button type="submit" aria-label="Enviar mensaje">➤</button></form>
+  </aside>
+
+  <script src="js/script.js"></script>
+  <script type="module" src="js/online.js?v=3"></script>
+</body>
+</html>
